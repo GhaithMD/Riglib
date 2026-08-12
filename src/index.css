@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-riglab-black font-sans text-riglab-silver antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-riglab-blue/30 text-white;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold tracking-wide text-white sm:text-4xl lg:text-5xl;
+  }
+
+  .section-subtitle {
+    @apply mt-4 max-w-2xl text-base text-riglab-muted sm:text-lg;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-riglab-blue px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-riglab-blue-light hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-riglab-blue/50 focus:ring-offset-2 focus:ring-offset-riglab-black sm:text-base;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-riglab-border bg-riglab-surface/50 px-6 py-3 text-sm font-semibold text-riglab-silver backdrop-blur-sm transition-all duration-300 hover:border-riglab-blue/50 hover:bg-riglab-surface hover:text-white focus:outline-none focus:ring-2 focus:ring-riglab-blue/30 focus:ring-offset-2 focus:ring-offset-riglab-black sm:text-base;
+  }
+
+  .glow-border {
+    @apply border border-riglab-border transition-all duration-300 hover:border-riglab-blue/40 hover:shadow-glow;
+  }
+
+  .card-surface {
+    @apply rounded-xl bg-riglab-card/80 backdrop-blur-sm;
+  }
+}
+
+/* Scroll reveal animation classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
