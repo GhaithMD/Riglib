@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-import { navLinks, contactInfo } from '../data/contact'
+import { buildWhatsAppUrl, navLinks, contactInfo } from '../data/contact'
 import { scrollToSection } from '../hooks/useScrollAnimation'
 import { SocialLinks } from './SocialIcons'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const whatsappUrl = buildWhatsAppUrl('Bonjour RigLab !')
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -43,7 +44,7 @@ export function Navbar() {
           className="flex shrink-0 items-center gap-3 transition-opacity hover:opacity-90"
         >
           <img
-            src="/assets/logo.png"
+            src="/assets/logo.svg"
             alt="RigLab Maintenance — Gaming PC Maintenance"
             className="h-10 w-10 rounded-full object-cover sm:h-12 sm:w-12"
           />
@@ -68,10 +69,18 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <SocialLinks />
-          <a href={`mailto:${contactInfo.email}`} className="btn-primary text-sm">
-            Contactez-nous
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-whatsapp text-sm"
+          >
+            WhatsApp
+          </a>
+          <a href={`tel:${contactInfo.phoneTel}`} className="btn-primary text-sm">
+            {contactInfo.phone}
           </a>
         </div>
 
@@ -108,14 +117,23 @@ export function Navbar() {
                 {label}
               </a>
             ))}
-            <div className="mt-4 flex flex-col gap-4 border-t border-riglab-border pt-4">
+            <div className="mt-4 flex flex-col gap-3 border-t border-riglab-border pt-4">
               <SocialLinks className="justify-center" />
               <a
-                href={`mailto:${contactInfo.email}`}
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp w-full text-center"
+                onClick={() => setIsOpen(false)}
+              >
+                WhatsApp
+              </a>
+              <a
+                href={`tel:${contactInfo.phoneTel}`}
                 className="btn-primary w-full text-center"
                 onClick={() => setIsOpen(false)}
               >
-                Contactez-nous
+                Appeler le {contactInfo.phone}
               </a>
             </div>
           </div>

@@ -1,10 +1,12 @@
-import { navLinks, contactInfo } from '../data/contact'
+import { buildWhatsAppUrl, contactInfo, navLinks } from '../data/contact'
 import { scrollToSection } from '../hooks/useScrollAnimation'
 import { SocialLinks } from './SocialIcons'
 
 export function Footer() {
+  const whatsappUrl = buildWhatsAppUrl('Bonjour RigLab !')
+
   return (
-    <footer className="border-t border-riglab-border bg-riglab-dark">
+    <footer className="border-t border-riglab-border bg-riglab-dark pb-20 sm:pb-0">
       <div className="section-container py-12 sm:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
@@ -17,7 +19,7 @@ export function Footer() {
               className="inline-flex items-center gap-3"
             >
               <img
-                src="/assets/logo.png"
+                src="/assets/logo.svg"
                 alt="RigLab Maintenance"
                 className="h-12 w-12 rounded-full object-cover"
               />
@@ -25,8 +27,9 @@ export function Footer() {
                 RigLab <span className="text-riglab-blue">Maintenance</span>
               </span>
             </a>
-            <p className="mt-4 text-sm text-riglab-muted">
-              PC Maintenance • Gaming • Optimization
+            <p className="mt-4 text-sm leading-relaxed text-riglab-muted">
+              Maintenance PC, gaming et Windows — Grand Tunis uniquement.
+              À domicile ou sur rendez-vous.
             </p>
             <div className="mt-6">
               <SocialLinks />
@@ -59,13 +62,15 @@ export function Footer() {
             <h3 className="font-display text-sm font-bold uppercase tracking-wider text-white">
               Contact
             </h3>
-            <ul className="mt-4 space-y-2 text-sm text-riglab-muted">
+            <ul className="mt-4 space-y-3 text-sm text-riglab-muted">
               <li>
                 <a
-                  href={`mailto:${contactInfo.email}`}
-                  className="transition-colors hover:text-riglab-blue-light"
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-green-400"
                 >
-                  {contactInfo.email}
+                  WhatsApp
                 </a>
               </li>
               <li>
@@ -76,14 +81,23 @@ export function Footer() {
                   {contactInfo.phone}
                 </a>
               </li>
+              <li>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="transition-colors hover:text-riglab-blue-light"
+                >
+                  {contactInfo.email}
+                </a>
+              </li>
               <li>{contactInfo.location}</li>
+              <li>{contactInfo.hours}</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-10 border-t border-riglab-border pt-8 text-center">
           <p className="text-sm text-riglab-muted">
-            © 2026 RigLab Maintenance. Tous droits réservés.
+            © 2026 RigLab Maintenance. Tous droits réservés. Services disponibles dans le Grand Tunis.
           </p>
         </div>
       </div>

@@ -38,6 +38,14 @@
     @apply inline-flex items-center justify-center rounded-lg border border-riglab-border bg-riglab-surface/50 px-6 py-3 text-sm font-semibold text-riglab-silver backdrop-blur-sm transition-all duration-300 hover:border-riglab-blue/50 hover:bg-riglab-surface hover:text-white focus:outline-none focus:ring-2 focus:ring-riglab-blue/30 focus:ring-offset-2 focus:ring-offset-riglab-black sm:text-base;
   }
 
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#20bd5a] hover:shadow-[0_0_20px_rgba(37,211,102,0.3)] focus:outline-none focus:ring-2 focus:ring-[#25D366]/50 focus:ring-offset-2 focus:ring-offset-riglab-black sm:text-base;
+  }
+
+  .form-input {
+    @apply w-full rounded-lg border border-riglab-border bg-riglab-surface/60 px-4 py-3 text-sm text-riglab-silver placeholder:text-riglab-muted/60 transition-colors focus:border-riglab-blue/50 focus:outline-none focus:ring-2 focus:ring-riglab-blue/20;
+  }
+
   .glow-border {
     @apply border border-riglab-border transition-all duration-300 hover:border-riglab-blue/40 hover:shadow-glow;
   }

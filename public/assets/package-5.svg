@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="400" y2="240">
+      <stop offset="0%" stop-color="#0a1020"/>
+      <stop offset="100%" stop-color="#101828"/>
+    </linearGradient>
+    <linearGradient id="accent5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0088ff"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg5)"/>
+  <path d="M80 170 L120 130 L160 145 L200 90 L240 120 L280 80 L320 110" stroke="url(#accent5)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="200" cy="90" r="6" fill="#00d4ff"/>
+  <circle cx="280" cy="80" r="6" fill="#0088ff"/>
+  <circle cx="320" cy="110" r="6" fill="#00a8ff"/>
+  <rect x="130" y="175" width="140" height="30" rx="6" fill="#121a28" stroke="#0088ff" stroke-width="1.5"/>
+  <text x="200" y="195" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#00d4ff">+FPS</text>
+  <text x="200" y="210" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#c8d0dc">Optimisation Gaming</text>
+  <text x="200" y="228" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8899aa">30 TND</text>
+</svg>
